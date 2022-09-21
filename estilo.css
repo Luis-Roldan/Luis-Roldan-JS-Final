@@ -3,3 +3,11 @@ body {
     color:aliceblue !important;
 }
 
+.imagen {
+    width: 700px;
+    height: 500px;
+}
+
+.texto__descriptivo {
+    text-align: center;
+}

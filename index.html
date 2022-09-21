@@ -56,11 +56,16 @@
     <h1 class="título">Tienda Online</h1>
     <br><br>
     <div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore nisi corrupti quis doloribus officiis quae dolor atque cupiditate explicabo consequuntur. Repudiandae sunt nam et iste rerum commodi praesentium voluptas enim.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore nisi corrupti quis doloribus officiis quae dolor atque cupiditate explicabo consequuntur. Repudiandae sunt nam et iste rerum commodi praesentium voluptas. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis dignissimos animi consequuntur delectus culpa accusantium voluptas corrupti doloribus, repellat esse sed adipisci, vel nam, placeat enim hic officiis facere fuga? Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tenetur optio, non, quia impedit assumenda quae molestias fugit distinctio quaerat iure, libero temporibus odio ea atque! Reprehenderit asperiores iste doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione mollitia ipsa vel eveniet neque nobis consectetur tenetur nihil fugiat. In quod amet sapiente rerum dolore repellendus tempore cupiditate nisi eius?</p>
     </div>
     <br><hr>
-    <img src="./img/pie.webp" class="rounded float-start" alt="lampara">
-    <img src="./img/Escritorio-Gamer-Kunkka-4.jpg" class="rounded float-end" alt="silla gamer">
+    <img src="./img/pie.webp" class="rounded float-start imagen" alt="lampara"> 
+    <img src="./img/Escritorio-Gamer-Kunkka-4.jpg" class="rounded float-end imagen" alt="silla gamer">
+    <div class="d-grid gap-2">
+      <p class="texto__descriptivo">Dar click si desea calcular el costo final de algun producto con impuestos</p>
+      <button class="btn btn-primary" type="button" id="btnCalcular">calcular</button>
+      
+    </div>
 </main>
 
 
@@ -68,5 +73,12 @@
 
 
 <script src="index.js"></script>
+<script>
+  window.onload = function (){
+    let boton = document.getElementById("btnCalcular")
+    boton.addEventListener("click", calcular)
+  }
+</script>
 </body>
 </html>
+

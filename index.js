@@ -1,6 +1,6 @@
 let nombreIngresado = prompt("Ingresar Nombre");
 let apellidoIngresado = prompt("Ingresar Apellido")
-let continuar = true
+
 
 
 function solicitarNombre(nombreIngresado , apellidoIngresado){
@@ -14,14 +14,24 @@ function solicitarNombre(nombreIngresado , apellidoIngresado){
 
 solicitarNombre(nombreIngresado , apellidoIngresado)
 
+// const products = [ { name: "lampara", price: "69.00" },  { name: "Mesa Gamer", price: "699.00" }]
 
+// let montoFinal = 0
 
-const products = [ { name: "lampara", price: "69.00" },  { name: "Mesa Gamer", price: "699.00" }]
+// for (const product of products) {			
+//     montoFinal += product.price*1.18   
+// }
 
-let montoFinal = 0
+// alert("Costo final de los productos seleccionados lampara y mesa Gamer"+ " " + montoFinal + "," + " " + "Gracias por su preferencia")
 
-for (const product of products) {			
-    montoFinal += product.price*1.18   
+function calcular(){
+    let continuar = true
+
+    while(continuar==true){    
+        let ingresarNumero = parseInt(prompt("Ingresar Numero (0 para salir)"))
+        if(ingresarNumero==0)
+        continuar=false;
+        let resultado = ingresarNumero + ingresarNumero * 0.18;
+        alert("El costo con impuestos es" + " " + resultado + " " + "soles");
+    }
 }
-
-alert("Costo final de los productos seleccionados lampara y mesa Gamer"+ " " + montoFinal + "," + " " + "Gracias por su preferencia" )
