@@ -28,10 +28,32 @@ function calcular(){
     let continuar = true
 
     while(continuar==true){    
+        
+        
         let ingresarNumero = parseInt(prompt("Ingresar Numero (0 para salir)"))
-        if(ingresarNumero==0)
-        continuar=false;
+        
         let resultado = ingresarNumero + ingresarNumero * 0.18;
+
         alert("El costo con impuestos es" + " " + resultado + " " + "soles");
+
+
+        if(ingresarNumero==0){
+        	continuar=false;
+	} else{
+        	sessionStorage.setItem("producto", resultado)
+
+        	let productoGuardado = sessionStorage.getItem("producto")
+
+        	console.log(productoGuardado)
+        }
     }
+
+    
 }
+
+// local storage 
+
+
+
+
+ 
