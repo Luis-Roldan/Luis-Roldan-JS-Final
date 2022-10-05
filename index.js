@@ -5,10 +5,30 @@ let apellidoIngresado = prompt("Ingresar Apellido")
 
 function solicitarNombre(nombreIngresado , apellidoIngresado){
     if((nombreIngresado == "") || (apellidoIngresado == "")){
-        alert("No ingresaste la informacion completa");
+
+        Swal.fire({
+            icon: "error",
+            tittle: "error al procesar",
+            text: "No ingresaste la informacion completa"
+        })
     }
     else{
-        alert("Bienvenido a Tienda online estimado" + " " + nombreIngresado + " " + apellidoIngresado + "," + " disfruta de tus compras con nosotros")
+        
+        Swal.fire({
+            icon: "success",
+            tittle: "Bienvenido",
+            text: "Bienvenido a Tienda online estimado" + " " + nombreIngresado + " " + apellidoIngresado + "," + " disfruta de tus compras con nosotros",
+            width: 400,
+            padding: '3em',
+            color: '#716add',
+            background: '#fff url(/images/trees.png)',
+            backdrop: `
+              rgba(0,0,123,0.4)
+              url("/img/nyan-cat.gif")
+              left top
+              no-repeat
+            `
+          })
     }
 }
 
@@ -51,7 +71,11 @@ function calcular(){
     
 }
 
-// local storage 
+
+const botonSwal = document.getElementById("btnMostrarSwal")
+botonSwal.onclick = mostrarSwal
+
+
 
 
 
