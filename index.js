@@ -76,7 +76,12 @@ const botonSwal = document.getElementById("btnMostrarSwal")
 botonSwal.onclick = mostrarSwal
 
 
-
+function consultarProductosServer() {
+    fetch("https://634753a3db76843976a9f41e.mockapi.io/")
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.log(error));
+}
 
 
 
