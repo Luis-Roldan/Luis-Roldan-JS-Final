@@ -1,19 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda online</title>
-    <link rel="stylesheet" href="estilo.css">
-    <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <!-- Include the Borderless theme -->
-    <link rel="stylesheet" href="@sweetalert2/theme-borderless/borderless.css">
+<form method="GET">
+  <input type="text" class="form" name="name" placeholder="Ingrese su nombre" id="name">
+  <input type="submit" onclick="return clicked();" value="nombre">
+  </form>
+  <script>
+  function clicked() {
+    let name = document.getElementById('name').value
+   return confirm('Bienvenido a Tienda online' + " " + name);
+  }
+  </script>
 
-    <script src="sweetalert2/dist/sweetalert2.min.js"></script>
+<form method="GET">
+  <input type="text" class="form" name="numero" placeholder="calcular Impuestos" id="calcularImpuestos">
+  <input type="submit" onclick="return clicked();" value="calcular Impuestos">
+  </form> 
+  <script>
+    function clicked(){
+      let continuar = true
+
+      while(continuar==true){    
+        let calcularImpuestos = document.getElementById('calcularImpuestos').value
+        
+        // let ingresarNumero = parseInt(document.getElementById("Ingresar Numero (0 para salir)"))
+        
+        let resultado = calcularImpuestos + (calcularImpuestos * 0.18) ;
+
+        // alert("El costo con impuestos es" + " " + resultado + " " + "soles");
+
+        return confirm('El costo de con impuestos es' + " " + resultado);
+
+
+        if(calcularImpuestos==0){
+        	continuar=false;
+	} else{
+        	sessionStorage.setItem("producto", resultado)
+
+        	let productoGuardado = sessionStorage.getItem("producto")
+
+        	console.log(productoGuardado)
+        }
+    }
+}
+</script>
+  
+
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda online</title>
+  <link rel="stylesheet" href="estilo.css">
+
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- Include the Borderless theme -->
+  <link rel="stylesheet" href="@sweetalert2/theme-borderless/borderless.css">
+
+  <script src="sweetalert2/dist/sweetalert2.min.js"></script>
 
 
     
@@ -69,23 +117,9 @@
     <br><hr>
     <img src="./img/pie.webp" class="rounded float-start imagen" alt="lampara"> 
     <img src="./img/Escritorio-Gamer-Kunkka-4.jpg" class="rounded float-end imagen" alt="silla gamer">
-    <div class="d-grid gap-2">
-      <p class="texto__descriptivo">Dar click si desea calcular el costo final de algun producto con impuestos</p>
-      <button class="btn btn-primary" type="button" id="btnCalcular">calcular</button>
-    </div>      
+         
 </main>
 
-
-<footer></footer>
-
-
-<script src="index.js"></script>
-<script>
-  window.onload = function (){
-    let boton = document.getElementById("btnCalcular")
-    boton.addEventListener("click", calcular)
-  }
-</script>
 </body>
 </html>
 
