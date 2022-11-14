@@ -1,53 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<form method="GET">
-  <input type="text" class="form" name="name" placeholder="Ingrese su nombre" id="name">
-  <input type="submit" onclick="return clicked();" value="nombre">
-  </form>
-  <script>
-  function clicked() {
-    let name = document.getElementById('name').value
-   return confirm('Bienvenido a Tienda online' + " " + name);
-  }
-  </script>
-
-<form method="GET">
-  <input type="text" class="form" name="numero" placeholder="calcular Impuestos" id="calcularImpuestos">
-  <input type="submit" onclick="return clicked();" value="calcular Impuestos">
-  </form> 
-  <script>
-    function clicked(){
-      let continuar = true
-
-      while(continuar==true){    
-        let calcularImpuestos = document.getElementById('calcularImpuestos').value
-        
-        // let ingresarNumero = parseInt(document.getElementById("Ingresar Numero (0 para salir)"))
-        
-        let resultado = calcularImpuestos + (calcularImpuestos * 0.18) ;
-
-        // alert("El costo con impuestos es" + " " + resultado + " " + "soles");
-
-        return confirm('El costo de con impuestos es' + " " + resultado);
-
-
-        if(calcularImpuestos==0){
-        	continuar=false;
-	} else{
-        	sessionStorage.setItem("producto", resultado)
-
-        	let productoGuardado = sessionStorage.getItem("producto")
-
-        	console.log(productoGuardado)
-        }
-    }
-}
-</script>
-  
-
-
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -107,6 +60,62 @@
 </nav>
 </header>
 
+<div>
+  <h3>Identificador</h3>
+  <form>
+    <div class="mb-3">
+      <label for="inputNombre" class="form-label" x
+        >Su nombre</label>
+        <form>
+          <input
+            type="input"
+            class="form-control"
+            id="nombreIngresado"
+            value="Ingrese su nombre"
+          />
+        <button
+        onclick="solicitarNombre();" type="button" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </form>
+</div>
+
+
+<hr>
+
+<div>
+  <h3>Calcular impuestos</h3>
+  <form>
+    <div class="mb-3">
+      <label for="Impuestos" class="form-label" x
+        >Monto</label>
+        <form>
+          <input
+            type="number"
+            class="form-control"
+            id="monto"
+            value="Ingrese su monto"
+          />
+        <button
+        onclick="calcularImpuestos();" type="button" class="btn btn-primary">Calcular</button>
+      </form>
+    </div>
+  </form>
+</div>
+
+
+
+
+<!-- <form method="GET">
+  <input type="text" class="form" name="name" placeholder="Ingrese su nombre" id="name">
+  <input type="submit" onclick="return clicked();" value="nombre">
+  </form>
+
+<form method="GET">
+  <input type="text" class="form" name="numero" placeholder="calcular Impuestos" id="calcularImpuestos">
+  <input type="submit" onclick="return clicked();" value="calcular Impuestos">
+  </form>  -->
+
 
 <main>
     <h1 class="título">Tienda Online</h1>
@@ -117,9 +126,19 @@
     <br><hr>
     <img src="./img/pie.webp" class="rounded float-start imagen" alt="lampara"> 
     <img src="./img/Escritorio-Gamer-Kunkka-4.jpg" class="rounded float-end imagen" alt="silla gamer">
-         
 </main>
 
+<section id="descuentos">
+  <h2>Ultimos descuentos</h2>
+  <ul></ul>
+</section>
+
+<footer>
+    
+</footer>
+
+
+<script src="/index.js"></script>
 </body>
 </html>
 
